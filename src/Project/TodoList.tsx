@@ -14,7 +14,7 @@ const TodoList = () => {
     const [editTaskInput, setEditTaskInput] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>('');
-    const [searchQuery, setSearchQuery] = useState<string>(''); // State for search query
+    const [searchQuery, setSearchQuery] = useState<string>('');
 
     useEffect(() => {
         fetchData();
