@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Pen, PlusSquare, XCircle } from 'react-bootstrap-icons';
 
 interface Tasks {
     id: string;
@@ -102,7 +103,7 @@ const TodoList = () => {
                         placeholder="Enter your task"
                         value={newTaskInput}
                         onChange={(e) => setNewTaskInput(e.target.value)} />
-                    <button className="btn btn-success" onClick={addTask}>Add Task</button>
+                    <button className="btn btn-primary" onClick={addTask}><PlusSquare/> Add Task</button>
                 </div>
             </div>
             <div className="mb-5">
@@ -127,14 +128,14 @@ const TodoList = () => {
                                         onChange={(e) => setEditTaskInput(e.target.value)}
                                     />
                                     <div className="input-group-append">
-                                        <button className="btn btn-outline-primary" onClick={() => updateTask(task.id)}>Update</button>
+                                        <button className="btn btn-success" onClick={() => updateTask(task.id)}><Pen /> Update</button>
                                     </div>
                                 </div>
                             ) : (
                                 <>
                                     <h4>{task.task}</h4>
                                     <div>
-                                        <button className="btn btn-danger m-2" onClick={() => deleteTask(task.id)}>Delete</button>
+                                        <button className="btn btn-danger m-2" onClick={() => deleteTask(task.id)}><XCircle /> Delete</button>
                                         <button className="btn btn-primary" onClick={() => editTask(task.id)}>Edit</button>
                                     </div>
                                 </>
